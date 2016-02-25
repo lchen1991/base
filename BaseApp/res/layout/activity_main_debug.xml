@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:titlebar="http://schemas.android.com/apk/res-auto"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.base.app.DebugActivity"
+    tools:ignore="MergeRootFrame" >
+
+<!--     <com.base.app.views.TitleBar -->
+<!--         android:id="@+id/title_bar" -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         titlebar:titleBarLeftImage="@drawable/title_back" /> -->
+
+<!--     <com.base.app.widget.ShimmerFrameLayout -->
+<!--         android:id="@+id/shimmer_view_container" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_gravity="center" -->
+<!--         android:layout_below="@id/title_bar" -->
+<!--         shimmer:duration="1000" -->
+<!--         android:visibility="gone" > -->
+       
+
+<!--     <Button -->
+<!--         android:id="@+id/btn" -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:text="test" -->
+<!--         android:visibility="gone" /> -->
+
+<!--     <com.base.app.imageloader.fresco.instrumentation.InstrumentedDraweeView -->
+<!--         android:id="@+id/main_sdv" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_centerInParent="true"  -->
+<!--         android:visibility="gone"/> -->
+
+<!--     <com.base.app.imageloader.fresco.zoomable.ZoomableDraweeView -->
+<!--         android:id="@+id/main_zoom" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_centerInParent="true"  -->
+<!--         android:visibility="invisible"/> -->
+    
+<!--      </com.base.app.widget.ShimmerFrameLayout> -->
+
+ </RelativeLayout>
