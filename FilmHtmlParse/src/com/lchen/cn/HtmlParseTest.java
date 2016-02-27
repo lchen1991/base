@@ -6,19 +6,23 @@ import java.util.Calendar;
 public class HtmlParseTest {
 
 	public static void main(String[] args) {
-		HtmlParseFromDytt htmlParseFromDytt = new HtmlParseFromDytt();
+		HtmlParseFromBttt htmlParseFromBttt = new HtmlParseFromBttt();
 		try {
 			long s = System.currentTimeMillis();
-			htmlParseFromDytt.getHtmlResourceClassify("http://www.dytt.com/fenlei/15_8.html");
+			htmlParseFromBttt.getHtmlResourcePage("http://www.bttiantang.com");
+			//htmlParseFromDytt.getHtmlResourceHome("http://www.dytt.com/");
+			//htmlParseFromDytt.getHtmlResourceClassify("http://www.dytt.com/fenlei/15_8.html");
 			long e = System.currentTimeMillis();
 			
 			Calendar c = Calendar.getInstance();  
 	        c.setTimeInMillis(e - s);  
-	        System.out.println("ºÄÊ±: " + c.get(Calendar.MINUTE) + "·Ö "  
-	                + c.get(Calendar.SECOND) + "Ãë " + c.get(Calendar.MILLISECOND)  
-	                + " ºÁÃë");  
+	        System.out.println("è€—æ—¶ï¼š" + c.get(Calendar.MINUTE) + " MINUTE "  
+	                + c.get(Calendar.SECOND) + " SECOND " + c.get(Calendar.MILLISECOND)  
+	                + " MILLISECOND ");  
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
+	
+	
 }
