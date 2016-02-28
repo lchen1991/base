@@ -258,7 +258,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.facebook.drawee:actualImageScaleType
         */
-        public static final int GenericDraweeView_actualImageScaleType = 11;
+        public static int GenericDraweeView_actualImageScaleType = 11;
         /**
           <p>This symbol is the offset where the {@link com.facebook.drawee.R.attr#backgroundImage}
           attribute's value can be found in the {@link #GenericDraweeView} array.
@@ -268,7 +268,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.facebook.drawee:backgroundImage
         */
-        public static final int GenericDraweeView_backgroundImage = 12;
+        public static int GenericDraweeView_backgroundImage = 12;
         /**
           <p>This symbol is the offset where the {@link com.facebook.drawee.R.attr#fadeDuration}
           attribute's value can be found in the {@link #GenericDraweeView} array.
@@ -282,7 +282,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.facebook.drawee:fadeDuration
         */
-        public static final int GenericDraweeView_fadeDuration = 0;
+        public static int GenericDraweeView_fadeDuration = 0;
         /**
           <p>This symbol is the offset where the {@link com.facebook.drawee.R.attr#failureImage}
           attribute's value can be found in the {@link #GenericDraweeView} array.
@@ -292,7 +292,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.facebook.drawee:failureImage
         */
-        public static final int GenericDraweeView_failureImage = 6;
+        public static int GenericDraweeView_failureImage = 6;
         /**
           <p>This symbol is the offset where the {@link com.facebook.drawee.R.attr#failureImageScaleType}
           attribute's value can be found in the {@link #GenericDraweeView} array.
@@ -306,7 +306,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.facebook.drawee:failureImageScaleType
         */
-        public static final int GenericDraweeView_failureImageScaleType = 7;
+        public static int GenericDraweeView_failureImageScaleType = 7;
         /**
           <p>This symbol is the offset where the {@link com.facebook.drawee.R.attr#overlayImage}
           attribute's value can be found in the {@link #GenericDraweeView} array.
@@ -316,7 +316,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.facebook.drawee:overlayImage
         */
-        public static final int GenericDraweeView_overlayImage = 13;
+        public static int GenericDraweeView_overlayImage = 13;
         /**
           <p>This symbol is the offset where the {@link com.facebook.drawee.R.attr#placeholderImage}
           attribute's value can be found in the {@link #GenericDraweeView} array.
@@ -326,7 +326,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.facebook.drawee:placeholderImage
         */
-        public static final int GenericDraweeView_placeholderImage = 2;
+        public static int GenericDraweeView_placeholderImage = 2;
         /**
           <p>This symbol is the offset where the {@link com.facebook.drawee.R.attr#placeholderImageScaleType}
           attribute's value can be found in the {@link #GenericDraweeView} array.
@@ -340,7 +340,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.facebook.drawee:placeholderImageScaleType
         */
-        public static final int GenericDraweeView_placeholderImageScaleType = 3;
+        public static int GenericDraweeView_placeholderImageScaleType = 3;
         /**
           <p>This symbol is the offset where the {@link com.facebook.drawee.R.attr#pressedStateOverlayImage}
           attribute's value can be found in the {@link #GenericDraweeView} array.
@@ -350,7 +350,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.facebook.drawee:pressedStateOverlayImage
         */
-        public static final int GenericDraweeView_pressedStateOverlayImage = 14;
+        public static int GenericDraweeView_pressedStateOverlayImage = 14;
         /**
           <p>This symbol is the offset where the {@link com.facebook.drawee.R.attr#progressBarAutoRotateInterval}
           attribute's value can be found in the {@link #GenericDraweeView} array.
@@ -364,7 +364,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.facebook.drawee:progressBarAutoRotateInterval
         */
-        public static final int GenericDraweeView_progressBarAutoRotateInterval = 10;
+        public static int GenericDraweeView_progressBarAutoRotateInterval = 10;
         /**
           <p>This symbol is the offset where the {@link com.facebook.drawee.R.attr#progressBarImage}
           attribute's value can be found in the {@link #GenericDraweeView} array.
@@ -374,7 +374,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.facebook.drawee:progressBarImage
         */
-        public static final int GenericDraweeView_progressBarImage = 8;
+        public static int GenericDraweeView_progressBarImage = 8;
         /**
           <p>This symbol is the offset where the {@link com.facebook.drawee.R.attr#progressBarImageScaleType}
           attribute's value can be found in the {@link #GenericDraweeView} array.
@@ -388,7 +388,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.facebook.drawee:progressBarImageScaleType
         */
-        public static final int GenericDraweeView_progressBarImageScaleType = 9;
+        public static int GenericDraweeView_progressBarImageScaleType = 9;
         /**
           <p>This symbol is the offset where the {@link com.facebook.drawee.R.attr#retryImage}
           attribute's value can be found in the {@link #GenericDraweeView} array.
@@ -398,7 +398,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.facebook.drawee:retryImage
         */
-        public static final int GenericDraweeView_retryImage = 4;
+        public static int GenericDraweeView_retryImage = 4;
         /**
           <p>This symbol is the offset where the {@link com.facebook.drawee.R.attr#retryImageScaleType}
           attribute's value can be found in the {@link #GenericDraweeView} array.
@@ -412,7 +412,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.facebook.drawee:retryImageScaleType
         */
-        public static final int GenericDraweeView_retryImageScaleType = 5;
+        public static int GenericDraweeView_retryImageScaleType = 5;
         /**
           <p>This symbol is the offset where the {@link com.facebook.drawee.R.attr#roundAsCircle}
           attribute's value can be found in the {@link #GenericDraweeView} array.
@@ -426,7 +426,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.facebook.drawee:roundAsCircle
         */
-        public static final int GenericDraweeView_roundAsCircle = 15;
+        public static int GenericDraweeView_roundAsCircle = 15;
         /**
           <p>This symbol is the offset where the {@link com.facebook.drawee.R.attr#roundBottomLeft}
           attribute's value can be found in the {@link #GenericDraweeView} array.
@@ -440,7 +440,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.facebook.drawee:roundBottomLeft
         */
-        public static final int GenericDraweeView_roundBottomLeft = 20;
+        public static int GenericDraweeView_roundBottomLeft = 20;
         /**
           <p>This symbol is the offset where the {@link com.facebook.drawee.R.attr#roundBottomRight}
           attribute's value can be found in the {@link #GenericDraweeView} array.
@@ -454,7 +454,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.facebook.drawee:roundBottomRight
         */
-        public static final int GenericDraweeView_roundBottomRight = 19;
+        public static int GenericDraweeView_roundBottomRight = 19;
         /**
           <p>This symbol is the offset where the {@link com.facebook.drawee.R.attr#roundTopLeft}
           attribute's value can be found in the {@link #GenericDraweeView} array.
@@ -468,7 +468,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.facebook.drawee:roundTopLeft
         */
-        public static final int GenericDraweeView_roundTopLeft = 17;
+        public static int GenericDraweeView_roundTopLeft = 17;
         /**
           <p>This symbol is the offset where the {@link com.facebook.drawee.R.attr#roundTopRight}
           attribute's value can be found in the {@link #GenericDraweeView} array.
@@ -482,7 +482,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.facebook.drawee:roundTopRight
         */
-        public static final int GenericDraweeView_roundTopRight = 18;
+        public static int GenericDraweeView_roundTopRight = 18;
         /**
           <p>This symbol is the offset where the {@link com.facebook.drawee.R.attr#roundWithOverlayColor}
           attribute's value can be found in the {@link #GenericDraweeView} array.
@@ -497,7 +497,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.facebook.drawee:roundWithOverlayColor
         */
-        public static final int GenericDraweeView_roundWithOverlayColor = 21;
+        public static int GenericDraweeView_roundWithOverlayColor = 21;
         /**
           <p>This symbol is the offset where the {@link com.facebook.drawee.R.attr#roundedCornerRadius}
           attribute's value can be found in the {@link #GenericDraweeView} array.
@@ -513,7 +513,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.facebook.drawee:roundedCornerRadius
         */
-        public static final int GenericDraweeView_roundedCornerRadius = 16;
+        public static int GenericDraweeView_roundedCornerRadius = 16;
         /**
           <p>This symbol is the offset where the {@link com.facebook.drawee.R.attr#roundingBorderColor}
           attribute's value can be found in the {@link #GenericDraweeView} array.
@@ -528,7 +528,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.facebook.drawee:roundingBorderColor
         */
-        public static final int GenericDraweeView_roundingBorderColor = 23;
+        public static int GenericDraweeView_roundingBorderColor = 23;
         /**
           <p>This symbol is the offset where the {@link com.facebook.drawee.R.attr#roundingBorderWidth}
           attribute's value can be found in the {@link #GenericDraweeView} array.
@@ -544,7 +544,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.facebook.drawee:roundingBorderWidth
         */
-        public static final int GenericDraweeView_roundingBorderWidth = 22;
+        public static int GenericDraweeView_roundingBorderWidth = 22;
         /**
           <p>This symbol is the offset where the {@link com.facebook.drawee.R.attr#viewAspectRatio}
           attribute's value can be found in the {@link #GenericDraweeView} array.
@@ -558,6 +558,6 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.facebook.drawee:viewAspectRatio
         */
-        public static final int GenericDraweeView_viewAspectRatio = 1;
+        public static int GenericDraweeView_viewAspectRatio = 1;
     };
 }

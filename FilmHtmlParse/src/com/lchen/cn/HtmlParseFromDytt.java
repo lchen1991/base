@@ -1,7 +1,10 @@
 package com.lchen.cn;
 
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -12,7 +15,8 @@ import org.jsoup.select.Elements;
 public class HtmlParseFromDytt {
 
 	/**
-	 * Ê×Ò³
+	 * é¦–é¡µ
+	 * 
 	 * @param url
 	 * @throws IOException
 	 */
@@ -27,23 +31,23 @@ public class HtmlParseFromDytt {
 			}
 			Elements elementsBoutList = elements.getElementsByClass("boutlist");
 			if (elementsBoutList.size() != 0) {
-				// ¾«Æ·ÍÆ¼ö¡£¡£¡£
+				// ç²¾å“æ¨èã€‚ã€‚ã€‚
 				for (Element elementBout : elementsBoutList) {
 					Elements elementsTops = elementBout.getElementsByTag("li");
 					for (Element elementTop : elementsTops) {
 						Element element = elementTop.getElementsByTag("a").get(
 								0);
-						// ÀàĞÍ µØÇø ÆÀ·Ö Ê±¼ä
+						// ç±»å‹ åœ°åŒº è¯„åˆ† æ—¶é—´
 						String type = elementTop.getElementsByTag("p").get(1)
-								.html();// 2 £º µØÇø
+								.html();// 2 ï¼š åœ°åŒº
 						String pingfen = elementTop.getElementsByTag("p")
 								.get(3).html();
 						String href = element.attr("href");
 						String title = element.attr("title");
-						getHtmlResourceContent(url + href);
+						// getHtmlResourceContent(url + href);
 						System.out.println(element.html() + "  href:" + href
 								+ " title:" + title + "===type:" + type
-								+ ";ÆÀ·Ö£º" + pingfen);
+								+ ";è¯„åˆ†ï¼š" + pingfen);
 					}
 					System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^");
 				}
@@ -55,7 +59,7 @@ public class HtmlParseFromDytt {
 					String title = elementOther.attr("title");
 					System.out.println(elementOther.html() + "  href:" + href
 							+ " title:" + title);
-					getHtmlResourceContent(url + href);
+					// getHtmlResourceContent(url + href);
 					System.out.println("****");
 				}
 			}
@@ -64,7 +68,8 @@ public class HtmlParseFromDytt {
 	}
 
 	/**
-	 * ÄÚÈİÒ³
+	 * å†…å®¹é¡µ
+	 * 
 	 * @param url
 	 * @throws IOException
 	 */
@@ -73,20 +78,20 @@ public class HtmlParseFromDytt {
 		Elements elementsEndinfo = document.getElementsByClass("endinfo");
 		if (elementsEndinfo.size() > 0) {
 			Element elementsEndinfos = elementsEndinfo.get(0);
-			// ½âÎöÍ¼Æ¬
+			// è§£æå›¾ç‰‡
 			Elements elementsImg = elementsEndinfos.getElementsByClass("pic");
 			if (elementsImg.size() > 0) {
 				Elements elementsImgTag = elementsImg.get(0).getElementsByTag(
 						"img");
 				if (elementsImg.size() > 0) {
 					String elementsImgValue = elementsImgTag.get(0).attr("src");
-					System.out.println("Í¼Æ¬µØÖ·£º" + elementsImgValue);
+					System.out.println("å›¾ç‰‡åœ°å€ï¼š" + elementsImgValue);
 				}
 			}
-			// ½âÎö±êÌâ
+			// è§£ææ ‡é¢˜
 			System.out.println(elementsEndinfos.getElementsByTag("h1").get(0)
 					.html());
-			// ½âÎöÄÚÈİ
+			// è§£æå†…å®¹
 			Elements elementsDetails = elementsEndinfos.getElementsByTag("li");
 			String filmInfoTag = "";
 			StringBuffer sb = new StringBuffer();
@@ -97,11 +102,10 @@ public class HtmlParseFromDytt {
 
 					if (node.childNodes().size() > 0) {
 						String tag = node.childNodes().get(0).outerHtml();
-
-						if ("ÉÏÓ³£º".equals(tag) || "×´Ì¬£º".equals(tag)
-								|| "µØÇø£º".equals(tag) || "¸üĞÂÈÕÆÚ£º".equals(tag)
-								|| "¸üĞÂÖÜÆÚ£º".equals(tag) || "ÀàĞÍ£º".equals(tag)
-								|| "Ö÷Ñİ£º".equals(tag)) {
+						if ("ä¸Šæ˜ ï¼š".equals(tag) || "çŠ¶æ€ï¼š".equals(tag)
+								|| "åœ°åŒºï¼š".equals(tag) || "æ›´æ–°æ—¥æœŸï¼š".equals(tag)
+								|| "æ›´æ–°å‘¨æœŸï¼š".equals(tag) || "ç±»å‹ï¼š".equals(tag)
+								|| "ä¸»æ¼”ï¼š".equals(tag)) {
 							if (sb.length() > 0) {
 								sb.deleteCharAt(sb.length() - 1);
 							}
@@ -127,37 +131,75 @@ public class HtmlParseFromDytt {
 				}
 			}
 		}
-		
-		//¼ò½é
+
+		// ç®€ä»‹
 		Elements elementsAlltext = document.getElementsByClass("alltext");
 		if (elementsAlltext.size() > 0) {
-			System.out.println("¼ò½é£º"+elementsAlltext.html());
-			System.out.println();
+			System.out.println("ç®€ä»‹ï¼š" + elementsAlltext.html());
 		}
+
+		// ä¸‹è½½åœ°å€
+		Elements elementsThunder = document.getElementsByClass("downlist");
+		for (Element element : elementsThunder) {
+			Elements elementsScript = element.getElementsByTag("script");
+			String GvodUrls = elementsScript.html();
+			if(GvodUrls!=null&&GvodUrls.contains("GvodUrls"))
+			{
+				int s = GvodUrls.indexOf("\"")+1;
+				int e = GvodUrls.indexOf("\";");
+				GvodUrls = GvodUrls.substring(s,e).trim();
+				String[] ts = GvodUrls.split("###");
+				for (String string:ts) {
+					System.out.println(ThunderEncode(string));
+				}
+			}
+		}
+		
 	}
-	
-	public void getHtmlResourceClassify(String url) throws IOException
-	{
+
+	public void getHtmlResourceClassify(String url) throws IOException {
 		Document document = Jsoup.connect(url).timeout(5000).get();
 		Elements elementsBox = document.getElementsByClass("box");
-		if(elementsBox.size()>0)
-		{
+		if (elementsBox.size() > 0) {
 			Elements elementsTops = elementsBox.get(0).getElementsByTag("li");
 			for (Element elementTop : elementsTops) {
 				Element element = elementTop.getElementsByTag("a").get(0);
-				
-				// Äê´ú µØÇø ÆÀ·Ö ÀàĞÍ Ö÷Ñİ ·¢²¼ Ê±¼ä
-				String dizhi = elementTop.getElementsByTag("p").get(1).html();// 2 £º µØÇø
+
+				// å¹´ä»£ åœ°åŒº è¯„åˆ† ç±»å‹ ä¸»æ¼” å‘å¸ƒ æ—¶é—´
+				String dizhi = elementTop.getElementsByTag("p").get(1).html();// 2 // ï¼š// åœ°åŒº
 				String pingfen = elementTop.getElementsByTag("p").get(3).html();
 				String href = element.attr("href");
 				String title = element.attr("title");
-				System.out.println(element.html() + "  µØÖ·:" + href
-						+ " Ãû³Æ:" + title + ";Äê´ú:" + dizhi
-						+ ";ÆÀ·Ö£º" + pingfen);
+				System.out.println(element.html() + "  åœ°å€:" + href + " åç§°:" + title + ";å¹´ä»£:" + dizhi + ";è¯„åˆ†ï¼š" + pingfen);
 				getHtmlResourceContent("http://www.dytt.com/" + href);
 			}
 			System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^");
-		
 		}
 	}
+
+	public String ThunderEncode(String t_url) {
+		String thunderPrefix = "AA";
+		String thunderPosix = "ZZ";
+		String thunderTitle = "thunder://";
+		String tem_t_url = t_url;
+		String thunderUrl = "";
+		try {
+			thunderUrl = thunderTitle  + encodeBase64((thunderPrefix + tem_t_url+ thunderPosix).getBytes());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return thunderUrl;
+	}
+	
+	/*** 
+     * encode by Base64 
+     */  
+    public static String encodeBase64(byte[]input) throws Exception{  
+        Class clazz=Class.forName("com.sun.org.apache.xerces.internal.impl.dv.util.Base64");  
+        Method mainMethod= clazz.getMethod("encode", byte[].class);  
+        mainMethod.setAccessible(true);  
+         Object retObj=mainMethod.invoke(null, new Object[]{input});  
+         return (String)retObj;  
+    }  
+
 }

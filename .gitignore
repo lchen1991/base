@@ -1,0 +1,17 @@
+\.classpath
+gen/
+bin/
+./gen
+.gen/*
+./bin
+./bin/*
+./class
+./class/*
+project.properties
+./.settings
+\.settings
+./.settings/*
+\.DS_Store
+\.Thumb
+.svn/
+.svn/*

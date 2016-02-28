@@ -1,14 +1,21 @@
 package com.lchen.cn;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.nodes.Node;
 import org.jsoup.select.Elements;
 
 public class HtmlParseFromBttt {
@@ -80,5 +87,83 @@ public class HtmlParseFromBttt {
 		}
 		
 	}
-
+	
+	public void getHtmlResourceContent(String url)
+	{
+		Document document = null;
+		try {
+			document = Jsoup.connect(url).timeout(5000).get();
+			Elements elementsDetailList = document.getElementsByClass("moviedteail_list");
+			for (Element elementList:elementsDetailList) {
+				Elements elementslis = elementList.getElementsByTag("li");
+				for (Element elementLi:elementslis) {
+					System.out.println(elementLi.text());
+				}
+			}
+			
+			Elements elementsTinfo = document.getElementsByClass("tinfo");
+			System.out.println("下载地址：");
+			for (Element elementLi:elementsTinfo) {
+				Elements elementsA = elementLi.getElementsByTag("a");
+				String href = elementsA.attr("href");
+				System.out.println(href);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void downloadtTorrent(String url,String id,String uhash)
+	{
+		//action=download&id=27477&uhash=4934020f2d77e465d9c266ad&imageField.x=10&imageField.y=10
+		try {
+			URL httpUrl = new URL(url) ;
+			HttpURLConnection connection = (HttpURLConnection) httpUrl.openConnection();
+			connection.setConnectTimeout(5000);
+			connection.setDoInput(true);
+			connection.setDoOutput(true);
+			connection.setRequestMethod("POST");
+			connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+			connection.connect();
+			
+			
+			OutputStream outputStream = connection.getOutputStream();
+			outputStream.write(("action=download&id="+id+"&uhash="+uhash+"&imageField.x=68&imageField.y=28").getBytes());
+			
+			if(connection.getResponseCode() == 200)
+			{
+				Map<String, List<String>> headers = connection.getHeaderFields();
+				//获取文件名
+				String fileName = UUID.randomUUID()+".torrent";
+				List<String> dispositionList = headers.get("Content-Disposition");
+				String s = "filename=\"";
+				String e = "torrent";
+				for (String string:dispositionList) {
+					int nameStart = string.indexOf(s);
+					int end = string.lastIndexOf(e);
+					fileName = string.substring(nameStart+s.length(), end+e.length());
+					fileName = new String(fileName.getBytes("ISO-8859-1"), "UTF-8");
+				}
+				BufferedInputStream inputStreamReader = new BufferedInputStream(connection.getInputStream());
+				BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(new FileOutputStream("D:/github/"+fileName));
+				byte[] data = new byte[1024];
+				int len = -1;
+				while ((len = inputStreamReader.read(data))!=-1) {
+					bufferedOutputStream.write(data, 0, len);
+					bufferedOutputStream.flush();
+				}
+				inputStreamReader.close();
+				bufferedOutputStream.close();
+			}
+			else
+			{
+				System.out.println("下载失败！");
+			}
+			
+			outputStream.close();
+		} catch (Exception e) {
+			System.out.println("下载失败！"+e.getMessage());
+		}
+		
+	}
 }
