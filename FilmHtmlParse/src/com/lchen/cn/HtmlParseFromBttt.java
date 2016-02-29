@@ -86,6 +86,12 @@ public class HtmlParseFromBttt {
 			System.out.println();
 		}
 		
+		//hotlst  下载排行
+		Element elementsHotList= document.getElementById("hotlst");
+		
+		
+		//新片推荐
+		
 	}
 	
 	public void getHtmlResourceContent(String url)
