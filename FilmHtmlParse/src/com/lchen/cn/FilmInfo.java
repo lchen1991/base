@@ -9,18 +9,22 @@ public class FilmInfo implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String filmName; // µçÓ°Ãû³Æ
-	private String fimHref; // µçÓ°Ò³ÃæµØÖ·
-	private String filmTitle;// µçÓ°title
-	private List<String> filmClassify;// ·ÖÀà
-	private String filmZone;// µØÓò
-	private String filmScreensTime;// ÉÏÓ³Ê±¼äÊ±¼ä
-	private String filmPublishTime;// ·¢²¼Ê±¼ä
-	private List<String> filmStarred;// µçÓ°Ö÷Ñİ
-	private String filmState;// µçÓ°×´Ì¬
-	private List<String> filmImages;// µçÓ°Í¼¼¯
-	private String filmPoster;// µçÓ°º£±¨
-	private String filmSynopsis;// µçÓ°¼ò½é
+	private String filmName; // ç”µå½±åç§°
+	private String fimHref; // ç”µå½±é¡µé¢åœ°å€
+	private String filmTitle;// ç”µå½±title
+	private List<String> filmClassify;// åˆ†ç±»
+	private String filmZone;// åœ°åŸŸ
+	private String filmScreensTime;// ä¸Šæ˜ æ—¶é—´æ—¶é—´
+	private String filmPublishTime;// å‘å¸ƒæ—¶é—´
+	private String filmDirector; //å¯¼æ¼”
+	private String filmScreenWriter; //ç¼–å‰§
+	private List<String> filmStarred;// ç”µå½±ä¸»æ¼”
+	private String filmState;// ç”µå½±çŠ¶æ€
+	private List<String> filmImages;// ç”µå½±å›¾é›†
+	private String filmPoster;// ç”µå½±æµ·æŠ¥
+	private String filmSynopsis;// ç”µå½±ç®€ä»‹
+	private String filmScore;
+	private List<String> torrentDownloadList;
 
 	public String getFilmName() {
 		return filmName;
@@ -116,6 +120,38 @@ public class FilmInfo implements Serializable{
 
 	public void setFilmSynopsis(String filmSynopsis) {
 		this.filmSynopsis = filmSynopsis;
+	}
+
+	public String getFilmScore() {
+		return filmScore;
+	}
+
+	public void setFilmScore(String filmScore) {
+		this.filmScore = filmScore;
+	}
+
+	public List<String> getTorrentDownloadList() {
+		return torrentDownloadList;
+	}
+
+	public void setTorrentDownloadList(List<String> torrentDownloadList) {
+		this.torrentDownloadList = torrentDownloadList;
+	}
+
+	public String getFilmDirector() {
+		return filmDirector;
+	}
+
+	public void setFilmDirector(String filmDirector) {
+		this.filmDirector = filmDirector;
+	}
+
+	public String getFilmScreenWriter() {
+		return filmScreenWriter;
+	}
+
+	public void setFilmScreenWriter(String filmScreenWriter) {
+		this.filmScreenWriter = filmScreenWriter;
 	}
 
 }
