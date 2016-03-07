@@ -14,11 +14,11 @@ import com.aliyun.oss.model.OSSObject;
  */
 public class CreateFolderSample {
     
-    private static String endpoint = "*** Provide OSS endpoint ***";
-    private static String accessKeyId = "*** Provide your AccessKeyId ***";
-    private static String accessKeySecret = "*** Provide your AccessKeySecret ***";
-
-    private static String bucketName = "*** Provide bucket name ***";
+	private static String endpoint = "oss-cn-beijing.aliyuncs.com";
+    private static String accessKeyId = "ubuSFRjBoEkKJgfC";
+    private static String accessKeySecret = "SIVkFeOyOFGWZ9syuDCrni4mxWBavb";
+    
+    private static String bucketName = "bttiantang";
 
     public static void main(String[] args) throws IOException {        
         /*
@@ -32,7 +32,7 @@ public class CreateFolderSample {
              * suffixed with a slash
              */
             final String keySuffixWithSlash = "MyObjectKey/";
-            client.putObject(bucketName, keySuffixWithSlash, new ByteArrayInputStream(new byte[0]));
+            client.putObject(bucketName, keySuffixWithSlash, new ByteArrayInputStream(new byte[9999]));
             System.out.println("Creating an empty folder " + keySuffixWithSlash + "\n");
             
             /*

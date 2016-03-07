@@ -11,10 +11,10 @@ public class HtmlParseTest {
 		try {
 			long s = System.currentTimeMillis();
 			//htmlParseFromBttt.downloadtTorrent("http://www.bttiantang.com/download1.php","27477","5f87c89856a31f1d40b4f999");
-			//htmlParseFromBttt.getHtmlResourceContent(new FilmInfo(),"http://www.bttiantang.com/subject/27747.html");
+			htmlParseFromBttt.getHtmlResourceContent(new FilmInfo(),"http://www.bttiantang.com/subject/27747.html");
 			//htmlParseFromBttt.getHtmlResourcePage("http://www.bttiantang.com/");
 			
-			htmlParseFromDytt.getHtmlResourceHome("http://www.dytt.com/");
+			//htmlParseFromDytt.getHtmlResourceHome("http://www.dytt.com/");
 			//htmlParseFromDytt.getHtmlResourceContent("http://www.dytt.com/xiazai/id22730.html");
 			//htmlParseFromDytt.getHtmlResourceClassify("http://www.dytt.com/fenlei/15_8.html");
 			

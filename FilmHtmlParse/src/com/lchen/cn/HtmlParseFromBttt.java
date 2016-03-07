@@ -272,12 +272,21 @@ public class HtmlParseFromBttt {
 			
 			Elements elementsTinfo = document.getElementsByClass("tinfo");
 			System.out.println("下载地址：");
-			List<String> downloadTorrentList = new ArrayList<String>();
+			LinkedHashMap<String,String> downloadTorrentList = new LinkedHashMap<String, String>();
 			for (Element elementLi:elementsTinfo) {
 				Elements elementsA = elementLi.getElementsByTag("a");
+				String title = elementsA.attr("title");
 				String href = elementsA.attr("href");
-				downloadTorrentList.add(mBaaseUrl+href);
-				System.out.println(href);
+				downloadTorrentList.put(title,mBaaseUrl+href);
+				String durl = mBaaseUrl+href;
+				 int starIndex = durl.indexOf("id=");
+                 durl = durl.substring(starIndex);
+                 int endIndex = durl.indexOf("&");
+                 String id = durl.substring("id=".length(), endIndex);
+                 starIndex = durl.indexOf("uhash=");
+                 String uhash = durl.substring(starIndex+"uhash=".length(), durl.length());
+                 System.out.println(id+";"+uhash);
+				System.out.println(durl);
 			}
 			filmInfo.setTorrentDownloadList(downloadTorrentList);
 		} catch (IOException e) {

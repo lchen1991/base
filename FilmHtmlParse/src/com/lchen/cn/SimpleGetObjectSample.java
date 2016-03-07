@@ -57,39 +57,39 @@ public class SimpleGetObjectSample {
              * Upload an object to your bucket from a file
              */
         	
-//        	HtmlParseFromBttt htmlParseFromBttt = new HtmlParseFromBttt();
-//        	
-//        	BtHomePageInfo data = htmlParseFromBttt.getHtmlResourcePage("http://www.bttiantang.com/");
-//        	Gson gson =new Gson();
-//        	
-//        	System.out.println("Uploading a new object to OSS from a file\n");
-//            ObjectMetadata  objectMetadata = new ObjectMetadata();
-//            objectMetadata.setContentType("application/json");
-//            client.putObject(new PutObjectRequest(bucketName, key, createSampleFile(key,gson.toJson(data)),objectMetadata));
-//            
-//            
-//            List<MovieClassify> ms = data.getMovieClassifys();
-//            ms.remove(ms.size()-1);
-//            
-//        	for (MovieClassify movieClassify:ms) {
-//        		List<FilmInfo> filmInfos = htmlParseFromBttt.getFilmListInfo(movieClassify.getClassifyHref(), null);
-//        		 client.putObject(new PutObjectRequest(bucketName, 
-//        				 key+"&"+movieClassify.getClassify(), createSampleFile(key+"&"+movieClassify.getClassify(),gson.toJson(filmInfos)),objectMetadata));
-//			
-//        		 System.out.println("Downloading an object");
-//                 OSSObject object = client.getObject(new GetObjectRequest(bucketName, key+"&"+movieClassify.getClassify()));
-//                 System.out.println("Content-Type: "  + object.getObjectMetadata().getContentType());
-//                 displayTextInputStream(object.getObjectContent());
-//                
-//        	}
+        	HtmlParseFromBttt htmlParseFromBttt = new HtmlParseFromBttt();
+        	
+        	BtHomePageInfo data = htmlParseFromBttt.getHtmlResourcePage("http://www.bttiantang.com/");
+        	Gson gson =new Gson();
+        	
+        	System.out.println("Uploading a new object to OSS from a file\n");
+            ObjectMetadata  objectMetadata = new ObjectMetadata();
+            objectMetadata.setContentType("application/json");
+            client.putObject(new PutObjectRequest(bucketName, key, createSampleFile(key,gson.toJson(data)),objectMetadata));
+            
+            
+            List<MovieClassify> ms = data.getMovieClassifys();
+            ms.remove(ms.size()-1);
+            
+        	for (MovieClassify movieClassify:ms) {
+        		List<FilmInfo> filmInfos = htmlParseFromBttt.getFilmListInfo(movieClassify.getClassifyHref(), null);
+        		 client.putObject(new PutObjectRequest(bucketName, 
+        				 key+"&"+movieClassify.getClassify(), createSampleFile(key+"&"+movieClassify.getClassify(),gson.toJson(filmInfos)),objectMetadata));
+			
+        		 System.out.println("Downloading an object");
+                 OSSObject object = client.getObject(new GetObjectRequest(bucketName, key+"&"+movieClassify.getClassify()));
+                 System.out.println("Content-Type: "  + object.getObjectMetadata().getContentType());
+                 displayTextInputStream(object.getObjectContent());
+                
+        	}
             
             /*
              * Download an object from your bucket
              */
-            System.out.println("Downloading an object");
-            OSSObject object = client.getObject(new GetObjectRequest(bucketName, "homePage&2015"));
-            System.out.println("Content-Type: "  + object.getObjectMetadata().getContentType());
-            displayTextInputStream(object.getObjectContent());
+//            System.out.println("Downloading an object");
+//            OSSObject object = client.getObject(new GetObjectRequest(bucketName, "homePage&2015"));
+//            System.out.println("Content-Type: "  + object.getObjectMetadata().getContentType());
+//            displayTextInputStream(object.getObjectContent());
             
         } catch (OSSException oe) {
             System.out.println("Caught an OSSException, which means your request made it to OSS, "
